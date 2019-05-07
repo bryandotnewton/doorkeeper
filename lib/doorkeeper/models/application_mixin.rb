@@ -37,6 +37,14 @@ module Doorkeeper
       def by_uid(uid)
         find_by(uid: uid.to_s)
       end
+
+      def get_ancestors
+        puts self.ancestors
+      end
+
+      def descendants
+        ObjectSpace.each_object(Class).select { |klass| klass < self }
+      end
     end
 
     # Set an application's valid redirect URIs.
@@ -45,6 +53,7 @@ module Doorkeeper
     #
     # @return [String] The redirect URI(s) seperated by newlines.
     def redirect_uri=(uris)
+      puts uris
       puts "fjdhjdfhkdfhkjhdfjkhdfjh dfjhdfjkhjkdfhkfdhk hdfjkhkjfdhkhfdkhfdkhdfjhj -----#{super.class.inspect}"
       super(uris.is_a?(Array) ? uris.join("\n") : uris)
     end
