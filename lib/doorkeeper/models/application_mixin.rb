@@ -45,7 +45,7 @@ module Doorkeeper
     #
     # @return [String] The redirect URI(s) seperated by newlines.
     def redirect_uri=(uris)
-      puts "fjdhjdfhkdfhkjhdfjkhdfjh dfjhdfjkhjkdfhkfdhk hdfjkhkjfdhkhfdkhfdkhdfjhj #{super.class.inspect}"
+      puts "fjdhjdfhkdfhkjhdfjkhdfjh dfjhdfjkhjkdfhkfdhk hdfjkhkjfdhkhfdkhfdkhdfjhj -----#{super.class.inspect}"
       super(uris.is_a?(Array) ? uris.join("\n") : uris)
     end
   end
